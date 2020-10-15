@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ɵmarkDirty } from "@angular/core";
 import { BehaviorSubject, Subject } from "rxjs";
-import { skip, take, takeUntil } from "rxjs/operators";
+import { skip, takeUntil, tap } from "rxjs/operators";
 
 @Component({
   selector: "app-counter",
@@ -30,11 +30,11 @@ export class CounterComponent implements OnInit, OnDestroy {
 
   /** workaround **/
   // ngOnInit() {
-  //   this.countSubject.pipe(take(1)).subscribe(count => this.count = count);
-  //   this.countSubject.pipe(skip(1), takeUntil(this.destroy)).subscribe(count => {
-  //     this.count = count;
-  //     ɵmarkDirty(this);
-  //   });
+  //   this.countSubject.pipe(
+  //     tap(count => this.count = count),
+  //     skip(1),
+  //     takeUntil(this.destroy),
+  //   ).subscribe(() => ɵmarkDirty(this));
   // }
 
   ngOnDestroy() {
