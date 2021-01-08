@@ -47,8 +47,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -102,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "zoneless-routing-bug"
+  "defaultProject": "zoneless-routing-bug",
+  "cli": {
+    "analytics": "19762ea0-b47a-490f-b2e3-c3fc8752aaaf"
+  }
 }
